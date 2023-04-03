@@ -1,0 +1,30 @@
+h1{
+    background-color:#dcdcdc;
+    width: 25%;
+    padding-left: 140px;
+    padding-right: 120px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    margin-left:30%;
+    margin-top:5%
+}
+body{
+
+    background-color:#a9a9a9;
+}
+a:link, a:visited {
+  background-color:#a9a9a9;
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+a{
+
+   margin-left:30%;
+    margin-top:10%
+}
+
+

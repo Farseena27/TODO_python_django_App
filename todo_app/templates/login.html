@@ -1,0 +1,66 @@
+<!--{% load static %}-->
+<!--<!DOCTYPE html>-->
+
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" href="{% static 'loginstyle.css' %}">-->
+
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<form method="POST" action="">-->
+<!--    <h1>Login</h1>-->
+<!--    {% csrf_token %}-->
+<!--    {{form.as_p}}-->
+<!--    <button type="submit" class="btn">login</button>-->
+<!--    <p>Don't have account?</p><a href="{% url 'Register' %}">Register</a>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
+
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--Login-->
+<div class="login-page">
+    <div class="form">
+        <div class="login">
+<!--            <div class="login-header">-->
+<!--                <h3>LOGIN</h3>-->
+<!--                <p>Please enter your credentials to login.</p>-->
+<!--            </div>-->
+        </div>
+        <div class="container py-5">
+            <form method="POST" class="login-form">
+                <div class="login-header">
+                <h3>LOGIN</h3>
+                <p>Please enter your credentials to login.</p>
+                </div>
+                {% csrf_token %}
+                <br>
+                {{ login_form|crispy }}
+
+                <input type="submit" value="Login">
+                <center>
+                    <p>Dont have account?<a href="{% url 'Register' %}">Create new account</a></p>
+                </center>
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

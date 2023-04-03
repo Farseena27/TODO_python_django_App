@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{% static 'style_taskdetail.css' %}">
+    <title>Task Detail</title>
+</head>
+<body>
+<a href="{%  url 'task' %}">Go Back</a>
+<h1>Tasks:{{tasks}}</h1>
+</body>
+</html>

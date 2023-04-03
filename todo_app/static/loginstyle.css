@@ -1,0 +1,25 @@
+body{
+    font-weight:bold;
+    background-color:#a9a9a9;
+}
+
+button{
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color:#5F9EA0;
+    font-weight:bold;
+}
+
+
+
+form{
+    width:300px;
+    border:15px solid Gray;
+    padding:50px;
+    margin:20px;
+    background-color:light grey;
+    margin-left:30%;
+    margin-top:10%
+}

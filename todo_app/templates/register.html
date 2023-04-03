@@ -1,0 +1,64 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'registerstyle.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<!--Register-->
+<div class="login-page">
+      <div class="form">
+        <div class="login">
+
+        </div>
+	<form method="POST"  class="login-form">
+        <div class="login-header">
+            <h3>REGISTER</h3>
+            <p>Please enter your credentials to Register.</p>
+        </div>
+		{% csrf_token %}
+        <br>
+		{{ register_form|crispy }}
+        <input style="margin-top:10px;" class="button" type="submit" value="Register">
+        <p>Already have an account?<a href="{% url 'login' %}">Login</a> </p>
+
+<!--		<button style="text-decoration: none;">Register</button>-->
+<!--          <p class="message">Not registered? <a href="{% url 'login' %}">Login</a></p>-->
+	</form>
+     </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<body>-->
+<!--<form  method="post" class="post-form">-->
+<!--    <h1>Register</h1>-->
+<!--    {% csrf_token %}-->
+<!--    {{form.as_p}}-->
+<!--    <button type="submit" class="btn">Save</button>-->
+<!--    <p class="text-center">If you already  have account?<a href="{% url 'login' %}">login</a>instead</p>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->

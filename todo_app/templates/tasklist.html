@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style_tasklist.css' %}">
+    <title>Task-List</title>
+</head>
+
+
+
+
+
+<body>
+
+
+
+<h1>To do List</h1>
+<div class="addtask">
+
+
+</div>
+
+<div class="navbar">
+  <div class="user">
+    <ul>
+        {% if request.user.is_authenticated %}
+        <li class="left"><p>Hi,{{request.user}}</p></li>
+        <li><a id="move-left" class="add" href="{% url 'task-create' %}">ADD TASK</a></li><br>
+        <li><a class="add"  href="{% url 'login' %}">LOGOUT</a></li>
+      {% else %}
+      {% endif %}
+    </ul>
+  </div>
+</div>
+
+<table class="content-table">
+
+    <tr>
+        <th>TASKS</th>
+        <th>DESCRIPTION</th>
+        <th>COMPLETED</th>
+        <th>TIME</th>
+        <th>UPDATE</th>
+        <th>VIEW</th>
+        <th>DELETE</th>
+
+
+    </tr>
+    {% for tasks in task %}
+    <tr>
+        <td>{{tasks.title}}</td>
+        <td>{{tasks.description}}</td>
+        <td>{{tasks.completed}}</td>
+            <td>{{tasks.created}}</td>
+                <td> <a href="{% url 'task-update' tasks.id %}"><i class="fa-solid fa-pen"  >Update</i></a> </td>
+                <td> <a href="{% url 'task-detail' tasks.id %}"><i class="fa-solid fa-eye"  >View</i></a> </td>
+                <td> <a href="{% url 'task-delete' tasks.id %}"><i class="fa-solid fa-trash">delete</i></a> </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</form>
+
+</body>
+
+</html>
+
+
